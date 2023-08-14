@@ -1,7 +1,13 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinLengthValidator
 
+
 class Address(models.Model):
+    # https://stackoverflow.com/questions/43239875/how-i-can-change-the-default-table-name-in-the-admin-interface-in-django
+    class Meta:
+        verbose_name = "Address"
+        verbose_name_plural = "Addresses"
+
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
     street = models.CharField(max_length=64)
     city = models.CharField(max_length=64)

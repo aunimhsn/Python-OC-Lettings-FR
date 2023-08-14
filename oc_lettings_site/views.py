@@ -1,8 +1,13 @@
 from django.shortcuts import render
-from lettings.models import Letting
-from profiles.models import Profile
+
 
 def index(request):
     return render(request, 'index.html')
 
 
+def error_404_view(request, exception=None):
+    return render(request, '404.html')
+
+
+def error_500_view(request, exception=None):
+    return render(request, '500.html')
