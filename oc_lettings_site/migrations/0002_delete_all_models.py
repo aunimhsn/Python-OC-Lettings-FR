@@ -1,6 +1,5 @@
 from django.db import migrations
-from oc_lettings_site.models import Address as SourceAddress
-from ..models import Address as DestinationAddress
+
 
 class Migration(migrations.Migration):
 

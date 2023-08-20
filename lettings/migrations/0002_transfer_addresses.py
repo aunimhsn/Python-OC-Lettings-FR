@@ -14,7 +14,6 @@ def transfer_addresses(apps, schema_editor):
         )
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('lettings', '0001_initial'),
     ]

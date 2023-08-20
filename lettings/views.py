@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from .models import Letting
 
 
@@ -8,7 +8,7 @@ def index(request):
     return render(request, 'lettings/index.html', context)
 
 
-def detail(request, letting_id):
+def detail(request, letting_id:int) -> HttpResponse:
     letting = Letting.objects.get(id=letting_id)
     context = {
         'title': letting.title,
